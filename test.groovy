@@ -9,7 +9,7 @@ pipeline {
                 name: 'setup')
     }
         choice(
-                choices: ""RHEL\nSLES",
+                choices: "RHEL\nSLES",
                 description: "Select OS:", 
                 name: 'OS')
 }
