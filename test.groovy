@@ -7,12 +7,11 @@ pipeline {
                 choices: "installed-" + env.BRANCH_NAME + "\nufm-svr43\nsmg-ib-svr033\nsmg-ib-svr042",
                 description: "Select setup:", 
                 name: 'setup')
-    }
         choice(
                 choices: "RHEL\nSLES",
                 description: "Select OS:", 
                 name: 'OS')
-}
+    }
     agent {
         node {
             label params.setup
@@ -33,5 +32,4 @@ pipeline {
             }
         }
     }
-
 }
