@@ -17,6 +17,7 @@ pipeline {
     stages {
         stage("copy ufm") {
             steps {
+                checkout scm
                 sh """
                 cp /project/sw/ufm/install/UFM6.2.0/x86_64/rhel7/ufm-6.2.0-3.el7.x86_64.tgz /tmp
                 """
