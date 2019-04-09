@@ -14,11 +14,13 @@ name: 'setup')
             customWorkspace 'workspace/' + JOB_NAME
         }
 }
+stages {
         stage("test") {
             steps {
                 sh """
                 echo "wajdi Mousa"
                 """
 }
+        }
 
 }
