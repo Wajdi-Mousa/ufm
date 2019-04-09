@@ -8,6 +8,11 @@ pipeline {
                 description: "Select setup:", 
                 name: 'setup')
     }
+        choice(
+                choices: ""RHEL\nSLES",
+                description: "Select OS:", 
+                name: 'OS')
+}
     agent {
         node {
             label params.setup
@@ -15,19 +20,16 @@ pipeline {
         }
     }
     stages {
-        stage("copy ufm") {
+        stage("config") {
             steps {
-                checkout scm
-                sh """
-                echo "test"
-                """
-            }
-        }
-        stage("extract ufm"){
-            steps{
-                sh """
-                echo "test"
-                """
+                script {
+                    deleteDir()
+                    checkout scm
+                    cmd = 'process-template.py'
+                    sh """
+                    ${cmd} --nic "${params.OS}"
+                    """
+                }
             }
         }
     }
