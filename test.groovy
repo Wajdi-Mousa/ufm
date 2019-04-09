@@ -26,7 +26,7 @@ pipeline {
                     checkout scm
                     cmd = 'process-template.py'
                     sh """
-                    ${cmd} --nic "${params.OS}"
+                    ${cmd} --OS "${params.OS}"
                     """
                 }
             }
