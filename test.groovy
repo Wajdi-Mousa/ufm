@@ -4,7 +4,7 @@ pipeline {
     options { skipDefaultCheckout() }
     parameters {
         choice(
-                choices: "installed-" + env.BRANCH_NAME + "\nufm-svr43\nsmg-ib-svr033\nsmg-ib-svr042",
+                choices: "installed-" + env.BRANCH_NAME + "\nufm-svr43\nsmg-ib-svr033\nsmg-ib-svr042\nsmg-ib-svr044",
                 description: "Select setup:", 
                 name: 'setup')
         choice(
